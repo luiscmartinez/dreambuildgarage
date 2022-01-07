@@ -22,7 +22,7 @@ export const DropDownMenu = () => {
   return (
     <Dropdown overlay={menu} trigger={["click"]}>
       <a onClick={e => e.preventDefault()}>
-      <GiHamburgerMenu />
+        <GiHamburgerMenu />
       </a>
     </Dropdown>
   )
