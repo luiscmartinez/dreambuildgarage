@@ -10,7 +10,7 @@ const SecondPage = () => {
 
   return (
     <Layout>
-      <Seo title="book an appointment" />
+      <Seo title="book an appointment w DBG" />
       {finish ? (
         <div>
           <h1>thank you for booking an appointment.</h1>

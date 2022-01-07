@@ -11,7 +11,7 @@ import { About } from "../components/about"
 const IndexPage = () => {
   return (
     <Layout>
-      <Seo title="Home" />
+      <Seo title="Dream Build Garage" />
       <Carousel />
       <Link to="/page-2/">
         <Button type="primary">Get quote</Button>
