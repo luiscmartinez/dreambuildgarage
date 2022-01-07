@@ -2,7 +2,7 @@ import React from "react"
 import { Button, Input, Form, DatePicker } from "antd"
 const log = console.log
 
-export const AppointmentForm = ({setFinish}) => {
+export const AppointmentForm = ({ setFinish }) => {
   const handleOnFinish = e => {
     setFinish(true)
     log(e)
@@ -31,16 +31,15 @@ export const AppointmentForm = ({setFinish}) => {
         </Form.Item>
         <Form.Item
           name="datePicker"
-          label="Select date"
+          label="How can we help you?"
           rules={[
             {
               type: "object",
-              required: true,
               message: "Please select a date!",
             },
           ]}
         >
-          <DatePicker />
+          <Input.TextArea placeholder="I was wondering about availability and rates. I need help with the following:" />
         </Form.Item>
         <Form.Item>
           <Button type="primary" style={{ marginLeft: 8 }} htmlType="submit">
@@ -51,4 +50,3 @@ export const AppointmentForm = ({setFinish}) => {
     </div>
   )
 }
-
