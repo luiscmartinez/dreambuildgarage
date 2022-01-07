@@ -11,7 +11,10 @@ const menu = (
       <a>about us</a>
     </Menu.Item>
     <Menu.Divider />
-    <Menu.Item key="3">gallery</Menu.Item>
+    <Menu.Item key="2">gallery</Menu.Item>
+    <Menu.Item key="3">youtube</Menu.Item>
+    <Menu.Item key="4">instagram</Menu.Item>
+
   </Menu>
 )
 
