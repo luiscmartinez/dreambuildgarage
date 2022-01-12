@@ -16,7 +16,7 @@ const contentStyle = {
 export function Carousel() {
   const imageData = useStaticQuery(graphql`
     query LandingCarouselQuery {
-      allFile(filter: { sourceInstanceName: { eq: "images" } }) {
+      allFile(filter: { sourceInstanceName: { eq: "carouselImages" } }) {
         edges {
           node {
             childImageSharp {
@@ -36,21 +36,15 @@ export function Carousel() {
 
   return (
     <AntCarousel autoplay>
-      <div>
-        <h3 style={contentStyle}>
-          <GatsbyImage image={carouselImages[3]} />
-        </h3>
-      </div>
-      <div>
-        <h3 style={contentStyle}>
-          <GatsbyImage image={carouselImages[2]} />
-        </h3>
-      </div>
-      <div>
-        <h3 style={contentStyle}>
-          <GatsbyImage image={carouselImages[5]} />
-        </h3>
-      </div>
+      {carouselImages.map((img, i) => {
+        return (
+          <div key={i}>
+            <h3 style={contentStyle}>
+              <GatsbyImage image={img} />
+            </h3>
+          </div>
+        )
+      })}
     </AntCarousel>
   )
 }
