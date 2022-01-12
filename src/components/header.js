@@ -1,7 +1,7 @@
 import * as React from "react"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
-import {DropDownMenu} from '../components/antd'
+import { DropDownMenu } from "../components/antd"
 
 const Header = ({ siteTitle }) => (
   <header
