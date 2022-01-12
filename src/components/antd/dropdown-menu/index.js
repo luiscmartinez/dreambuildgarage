@@ -23,7 +23,7 @@ const menu = (
     </Menu.Item>
     <Menu.Divider />
     <Menu.Item key="2" icon={<GrGallery />}>
-      gallery(coming soon)
+      <Link to="/gallery/">gallery(coming soon)</Link>
     </Menu.Item>
     <Menu.Divider />
     <Menu.Item key="3" icon={<AiFillYoutube />}>
