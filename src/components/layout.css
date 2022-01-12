@@ -617,3 +617,7 @@ pre tt:after {
   display: flex;
   justify-content: space-between;
 }
+.services-table {
+  font-weight: bolder;
+  border: 1px solid black;
+}
