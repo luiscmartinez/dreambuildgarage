@@ -6,5 +6,6 @@
     },
     "cSpell.words": [
         "antd"
-    ]
+    ],
+    "editor.formatOnSave": true
 }
