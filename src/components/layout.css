@@ -614,6 +614,13 @@ pre tt:after {
   height: auto;
   line-height: normal;
 }
+.headerLink {
+  color: white;
+  text-decoration: none;
+}
+.headerLink:hover {
+  color: red;
+}
 .headerContainer {
   padding: 1.45rem 1.085rem;
   display: flex;
