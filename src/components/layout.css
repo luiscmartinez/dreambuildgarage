@@ -631,3 +631,7 @@ pre tt:after {
 .appointment_form textarea {
   background-color: #f4f4f4;
 }
+.header {
+  background: black;
+  margin-bottom: 1.45rem;
+}

@@ -4,12 +4,7 @@ import { Link } from "gatsby"
 import { DropDownMenu } from "../components/antd"
 
 const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
+  <header className="header">
     <div className="headerContainer">
       <h1 className="headerTitle">
         <Link
