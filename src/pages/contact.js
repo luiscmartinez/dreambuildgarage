@@ -17,7 +17,7 @@ const ContactUsPage = () => {
         }}
       >
         <iframe
-          width="450"
+          width="100%"
           height="250"
           frameborder="0"
           src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCauUlyv92zgIER31WX5LaoBgZvo_rNSWg&q=7542+Warner+Ave,Huntington+Beach,CA"
