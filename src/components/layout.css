@@ -20,6 +20,8 @@ body {
   -ms-font-feature-settings: "kern", "liga", "clig", "calt";
   -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
   font-feature-settings: "kern", "liga", "clig", "calt";
+  background-color: #f7f7f7;
+  /* color: white; */
 }
 article,
 aside,
@@ -620,4 +622,12 @@ pre tt:after {
 .services-table {
   font-weight: bolder;
   border: 1px solid black;
+}
+.appointment_form {
+  background-color: white;
+  padding: 1rem 2rem;
+}
+.appointment_form input,
+.appointment_form textarea {
+  background-color: #f4f4f4;
 }
