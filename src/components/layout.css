@@ -605,11 +605,12 @@ pre tt:after {
   border-radius: 2px;
 }
 .hamburgerMenu {
-  font-size: 2rem;
+  font-size: 1.5rem;
+  height: 30px;
 }
 
 .headerTitle {
-  font-size: 2rem;
+  font-size: 1.8rem;
   margin: 0;
   height: auto;
   line-height: normal;
