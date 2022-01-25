@@ -7,7 +7,7 @@ import { GrGallery } from "@react-icons/all-files/gr/GrGallery"
 import { FaTools } from "@react-icons/all-files/fa/FaTools"
 import { AiFillCar } from "@react-icons/all-files/ai/AiFillCar"
 import { GiHomeGarage } from "@react-icons/all-files/gi/GiHomeGarage"
-import { MailOutlined, SettingOutlined } from "@ant-design/icons"
+import { SettingOutlined } from "@ant-design/icons"
 import { Link } from "gatsby"
 import { InstagramBtn } from "../../buttons"
 

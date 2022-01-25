@@ -1,13 +1,21 @@
 import React from "react"
-import { Button, Input, Form, DatePicker } from "antd"
+import { Button, Input, Form, InputNumber } from "antd"
+import createAppointment from "../../../api/appointmentPost"
+
 const log = console.log
 
 export const AppointmentForm = ({ setFinish }) => {
   const handleOnFinish = e => {
-    const { email, phone, body } = e
-    log(email, phone, body)
-    setFinish(true)
-    log(e)
+    createAppointment(e)
+      .then(res => {
+        log("AXIOS RES", res.data)
+        setFinish(true)
+      })
+      .catch(err => {
+        log("INSIDE CATCH")
+        log(err.response)
+        const emailError = err.response.data["email"]
+      })
   }
   const onFinishFailed = e => {
     const { email, datePicker } = e.values
@@ -29,7 +37,13 @@ export const AppointmentForm = ({ setFinish }) => {
         <Form.Item
           name="email"
           label="Email"
-          rules={[{ required: true, message: "Please input your email!" }]}
+          rules={[
+            { required: true, message: "Please input your email!" },
+            {
+              type: "email",
+              message: "This is not a valid E-mail!",
+            },
+          ]}
         >
           <Input placeholder="Email" />
         </Form.Item>
@@ -37,8 +51,13 @@ export const AppointmentForm = ({ setFinish }) => {
           name="phone"
           rules={[{ required: false }]}
           label="Phone number"
+          className="phone-input"
         >
-          <Input style={{ width: "100%" }} placeholder="323-999-9999" />
+          <InputNumber
+            style={{ width: "100%" }}
+            placeholder="323-999-9999"
+            className="phone-input"
+          />
         </Form.Item>
 
         <Form.Item
@@ -51,7 +70,7 @@ export const AppointmentForm = ({ setFinish }) => {
             },
           ]}
         >
-          <Input.TextArea placeholder="MESSAGE: I was wondering about availability and rates. I need help with the following:" />
+          <Input.TextArea placeholder="MESSAGE: I was wondering about availability and rates. I would like to visit on Tuesday. I need help with the following:" />
         </Form.Item>
 
         <Form.Item>
