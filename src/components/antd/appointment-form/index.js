@@ -1,10 +1,12 @@
-import React from "react"
+import React, { useState } from "react"
 import { Button, Input, Form, InputNumber } from "antd"
 import createAppointment from "../../../api/appointmentPost"
 
 const log = console.log
 
-export const AppointmentForm = ({ setFinish }) => {
+export const AppointmentForm = () => {
+  const [finish, setFinish] = useState(false)
+
   const handleOnFinish = e => {
     createAppointment(e)
       .then(res => {
@@ -23,62 +25,71 @@ export const AppointmentForm = ({ setFinish }) => {
   }
   return (
     <div>
-      <h2>Book appointment</h2>
-      <Form
-        name="basic"
-        labelCol={{ span: 8 }}
-        wrapperCol={{ span: 16 }}
-        initialValues={{ remember: true }}
-        onFinish={handleOnFinish}
-        onFinishFailed={onFinishFailed}
-        autoComplete="off"
-        className="appointment_form"
-      >
-        <Form.Item
-          name="email"
-          label="Email"
-          rules={[
-            { required: true, message: "Please input your email!" },
-            {
-              type: "email",
-              message: "This is not a valid E-mail!",
-            },
-          ]}
-        >
-          <Input placeholder="Email" />
-        </Form.Item>
-        <Form.Item
-          name="phone"
-          rules={[{ required: false }]}
-          label="Phone number"
-          className="phone-input"
-        >
-          <InputNumber
-            style={{ width: "100%" }}
-            placeholder="323-999-9999"
-            className="phone-input"
-          />
-        </Form.Item>
+      {finish ? (
+        <div>
+          <h1>thank you for booking an appointment.</h1>
+          <p>you'll be receiving a confirmation shortly</p>
+        </div>
+      ) : (
+        <div>
+          <h2>Book appointment</h2>
+          <Form
+            name="basic"
+            labelCol={{ span: 8 }}
+            wrapperCol={{ span: 16 }}
+            initialValues={{ remember: true }}
+            onFinish={handleOnFinish}
+            onFinishFailed={onFinishFailed}
+            autoComplete="off"
+            className="appointment_form"
+          >
+            <Form.Item
+              name="email"
+              label="Email"
+              rules={[
+                { required: true, message: "Please input your email!" },
+                {
+                  type: "email",
+                  message: "This is not a valid E-mail!",
+                },
+              ]}
+            >
+              <Input placeholder="Email" />
+            </Form.Item>
+            <Form.Item
+              name="phone"
+              rules={[{ required: false }]}
+              label="Phone number"
+              className="phone-input"
+            >
+              <InputNumber
+                style={{ width: "100%" }}
+                placeholder="323-999-9999"
+                className="phone-input"
+              />
+            </Form.Item>
 
-        <Form.Item
-          name="body"
-          label="How can we help you?"
-          rules={[
-            {
-              required: true,
-              message: "Tell us why are you reaching us today?",
-            },
-          ]}
-        >
-          <Input.TextArea placeholder="MESSAGE: I was wondering about availability and rates. I would like to visit on Tuesday. I need help with the following:" />
-        </Form.Item>
+            <Form.Item
+              name="body"
+              label="How can we help you?"
+              rules={[
+                {
+                  required: true,
+                  message: "Tell us why are you reaching us today?",
+                },
+              ]}
+            >
+              <Input.TextArea placeholder="MESSAGE: I was wondering about availability and rates. I would like to visit on Tuesday. I need help with the following:" />
+            </Form.Item>
 
-        <Form.Item>
-          <Button type="primary" htmlType="submit">
-            Continue
-          </Button>
-        </Form.Item>
-      </Form>
+            <Form.Item>
+              <Button type="primary" htmlType="submit">
+                Continue
+              </Button>
+            </Form.Item>
+          </Form>
+        </div>
+      )}
     </div>
   )
 }
