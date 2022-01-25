@@ -6,6 +6,7 @@ import { AiFillInstagram } from "@react-icons/all-files/ai/AiFillInstagram"
 import { GrGallery } from "@react-icons/all-files/gr/GrGallery"
 import { FaTools } from "@react-icons/all-files/fa/FaTools"
 import { AiFillCar } from "@react-icons/all-files/ai/AiFillCar"
+import { GiHomeGarage } from "@react-icons/all-files/gi/GiHomeGarage"
 import { MailOutlined, SettingOutlined } from "@ant-design/icons"
 import { Link } from "gatsby"
 import { InstagramBtn } from "../../buttons"
@@ -13,24 +14,27 @@ import { InstagramBtn } from "../../buttons"
 const { SubMenu } = Menu
 
 const menu = (
-  <Menu mode="inline">
-    <Menu.Item key="0" icon={<FaTools />}>
+  <Menu>
+    <Menu.Item key="0" icon={<GiHomeGarage />}>
+      <Link to="/">home</Link>
+    </Menu.Item>
+    <Menu.Item key="1" icon={<FaTools />}>
       <Link to="/page-2/">book appointment</Link>
     </Menu.Item>
     <Menu.Divider />
-    <Menu.Item key="1" icon={<AiFillCar />}>
+    <Menu.Item key="2" icon={<AiFillCar />}>
       <a>about us</a>
     </Menu.Item>
     <Menu.Divider />
-    <Menu.Item key="2" icon={<GrGallery />}>
+    <Menu.Item key="3" icon={<GrGallery />}>
       <Link to="/gallery/">gallery(coming soon)</Link>
     </Menu.Item>
     <Menu.Divider />
-    <Menu.Item key="3" icon={<AiFillYoutube />}>
+    <Menu.Item key="4" icon={<AiFillYoutube />}>
       youtube(coming soon)
     </Menu.Item>
     <Menu.Divider />
-    <Menu.Item key="4" icon={<AiFillInstagram />}>
+    <Menu.Item key="5" icon={<AiFillInstagram />}>
       <InstagramBtn />
     </Menu.Item>
     <Menu.Divider />
