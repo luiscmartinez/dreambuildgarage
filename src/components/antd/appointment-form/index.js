@@ -1,7 +1,8 @@
 import React, { useState } from "react"
-import { Button, Input, Form, InputNumber } from "antd"
+import { Button, Input, Form } from "antd"
+import { ImInstagram } from "@react-icons/all-files/im/ImInstagram"
 import createAppointment from "../../../api/appointmentPost"
-
+import { InstagramBtn } from "../../buttons"
 const log = console.log
 
 export const AppointmentForm = () => {
@@ -33,7 +34,14 @@ export const AppointmentForm = () => {
         </div>
       ) : (
         <div>
-          <h2>Book appointment</h2>
+          <h2>To Book an Appointment</h2>
+          <div>
+            <h4 className="appointment_insta_btn">
+              MESSAGE US ON <InstagramBtn /> <ImInstagram />
+            </h4>
+            <h3 style={{ textAlign: "center" }}>OR</h3>
+          </div>
+          <span>submit this form below</span>
           <Form
             name="basic"
             labelCol={{ span: 8 }}

@@ -643,3 +643,6 @@ pre tt:after {
   background: black;
   margin-bottom: 1.45rem;
 }
+.appointment_insta_btn {
+  text-transform: uppercase;
+}

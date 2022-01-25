@@ -27,7 +27,6 @@ const ContactUsPage = () => {
           allowfullscreen
           onLoad={handleLoad}
         />
-        <h2>999-999-9999</h2>
         <AppointmentForm />
       </div>
     </Layout>
