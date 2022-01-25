@@ -24,7 +24,7 @@ const menu = (
     </Menu.Item>
     <Menu.Divider />
     <Menu.Item key="2" icon={<AiFillCar />}>
-      <a>about us</a>
+      <Link to="/contact">contact us</Link>
     </Menu.Item>
     <Menu.Divider />
     <Menu.Item key="3" icon={<GrGallery />}>
