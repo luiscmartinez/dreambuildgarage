@@ -18,6 +18,7 @@ const menu = (
     <Menu.Item key="0" icon={<GiHomeGarage />}>
       <Link to="/">home</Link>
     </Menu.Item>
+    <Menu.Divider />
     <Menu.Item key="1" icon={<FaTools />}>
       <Link to="/page-2/">book appointment</Link>
     </Menu.Item>
