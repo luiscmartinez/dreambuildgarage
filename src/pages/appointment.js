@@ -4,7 +4,7 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 import { AppointmentForm } from "../components/antd"
 
-const SecondPage = () => {
+const CallToAction = () => {
   return (
     <Layout>
       <Seo title="book an appointment w DBG" />
@@ -12,4 +12,4 @@ const SecondPage = () => {
     </Layout>
   )
 }
-export default SecondPage
+export default CallToAction

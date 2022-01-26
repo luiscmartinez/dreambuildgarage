@@ -52,9 +52,6 @@ const menu = (
 )
 
 export const DropDownMenu = () => {
-  const handleClick = e => {
-    console.log(e)
-  }
   return (
     <Dropdown overlay={menu} trigger={["click"]}>
       <a onClick={e => e.preventDefault()}>
