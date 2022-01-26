@@ -20,7 +20,7 @@ const menu = (
     </Menu.Item>
     <Menu.Divider />
     <Menu.Item key="1" icon={<FaTools />}>
-      <Link to="/page-2/">book appointment</Link>
+      <Link to="/appointment/">book appointment</Link>
     </Menu.Item>
     <Menu.Divider />
     <Menu.Item key="2" icon={<AiFillCar />}>

@@ -13,7 +13,7 @@ const IndexPage = () => {
     <Layout>
       <Seo title="Dream Build Garage" />
       <Carousel />
-      <Link to="/page-2/">
+      <Link to="/appointment/">
         <Button type="primary">Get quote</Button>
       </Link>
       <About />
