@@ -3,7 +3,6 @@ import { Button, Input, Form } from "antd"
 import { ImInstagram } from "@react-icons/all-files/im/ImInstagram"
 import createAppointment from "../../../api/appointmentPost"
 import { InstagramBtn } from "../../buttons"
-import { GoogleMap } from "../../googleMap"
 const log = console.log
 
 export const AppointmentForm = () => {
@@ -108,7 +107,6 @@ export const AppointmentForm = () => {
           </Form>
         </div>
       )}
-      <GoogleMap />
     </div>
   )
 }
