@@ -2,7 +2,7 @@ import React from "react"
 
 export const About = () => {
   return (
-    <div>
+    <div className="about">
       <h2>Committed to Quality at Every Step</h2>
       <p>
         Got car issues but not exactly sure what it could be? Let us diagnose

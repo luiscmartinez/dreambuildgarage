@@ -680,3 +680,19 @@ pre tt:after {
   justify-content: space-around;
   margin-bottom: 1rem;
 }
+.about {
+  border-top: 2px solid black;
+  display: flex;
+  flex-direction: column;
+}
+.about h2 {
+  color: #38bdf9;
+  font-size: 1.7rem;
+  font-weight: 500;
+  width: 90%;
+  align-self: center;
+  text-align: center;
+}
+.about p {
+  font-size: medium;
+}
