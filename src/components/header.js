@@ -3,12 +3,27 @@ import PropTypes from "prop-types"
 import { Link } from "gatsby"
 import { DropDownMenu } from "../components/antd"
 
-const Header = ({ siteTitle }) => (
+function styleTitle() {
+  const dream = "Dream"
+  const build = "Build"
+  const garage = "Garage"
+  const llc = ".llc"
+  const styledTitle = (
+    <div>
+      {dream}
+      <span style={{ color: "#38bdf9" }}>{build}</span>
+      {garage}
+      {llc}
+    </div>
+  )
+  return styledTitle
+}
+const Header = () => (
   <header className="header">
     <div className="headerContainer">
       <h1 className="headerTitle">
         <Link to="/" className="headerLink">
-          {siteTitle}
+          {styleTitle()}
         </Link>
       </h1>
       <div className="hamburgerMenu">
@@ -17,13 +32,5 @@ const Header = ({ siteTitle }) => (
     </div>
   </header>
 )
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
-}
 
 export default Header
