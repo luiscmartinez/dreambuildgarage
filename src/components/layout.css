@@ -675,3 +675,8 @@ pre tt:after {
 .ul-services > li {
   list-style-type: "\2192";
 }
+.primaryBtnsContainer {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 1rem;
+}
