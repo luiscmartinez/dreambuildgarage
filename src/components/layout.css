@@ -668,3 +668,10 @@ pre tt:after {
   width: 100%;
   margin: 0;
 }
+.ul-services {
+  list-style: none;
+}
+
+.ul-services > li {
+  list-style-type: "\2192";
+}
