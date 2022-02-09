@@ -1,23 +1,29 @@
 import * as React from "react"
-import { Link } from "gatsby"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import { Button } from "antd"
 import { Carousel } from "../components/antd"
-import { Services } from "../components/services"
+import { Blocks } from "../components/blocks"
 import { About } from "../components/about"
+import { PrimaryBtns } from "../components/primaryBtns"
 
 const IndexPage = () => {
   return (
     <Layout>
       <Seo title="Dream Build Garage" />
       <Carousel />
-      <Link to="/appointment/">
-        <Button type="primary">Get quote</Button>
-      </Link>
+      <PrimaryBtns />
+      <h3
+        style={{
+          textAlign: "center",
+          fontWeight: "500",
+          fontFamily: "monospace",
+        }}
+      >
+        5 STAR QUALITY FOR ALL YOUR PERFORMANCE AND UPGRADE NEEDS
+      </h3>
+      <Blocks />
       <About />
-      <Services />
     </Layout>
   )
 }
