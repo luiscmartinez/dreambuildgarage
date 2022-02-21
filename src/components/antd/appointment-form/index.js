@@ -7,7 +7,6 @@ const log = console.log
 
 export const AppointmentForm = () => {
   const [finish, setFinish] = useState(false)
-  const [phone, setPhone] = useState("")
   const handleOnFinish = e => {
     createAppointment(e)
       .then(res => {
@@ -66,23 +65,15 @@ export const AppointmentForm = () => {
               <Input placeholder="Email" />
             </Form.Item>
             <Form.Item
-              rules={[{ required: false }]}
+              name="phone"
               label="Phone number"
+              rules={[{ required: false }]}
               className="phone-input"
             >
               <Input
                 style={{ width: "100%" }}
                 placeholder="323-999-9999"
                 className="phone-input"
-                value={phone}
-                onChange={e => {
-                  const v = e.target.value
-                  if (!Number(v)) {
-                    // not allowing the value to be another but a number
-                    return setPhone(v.substring(0, v.length - 1))
-                  }
-                  return setPhone(v)
-                }}
               />
             </Form.Item>
 
