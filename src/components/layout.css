@@ -663,11 +663,7 @@ pre tt:after {
   color: #666666;
   font-size: medium;
 }
-.article img {
-  height: 8rem;
-  width: 100%;
-  margin: 0;
-}
+
 .ul-services {
   list-style: none;
 }
