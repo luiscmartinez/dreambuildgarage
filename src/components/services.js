@@ -1,28 +1,34 @@
 import React from "react"
-import { Table } from "antd"
-
-const services = ["Oil change", "Valve cover gasket replacement","Oil filter housing gasket replacement","Oil pan gasket replacement","downpipes/chargepipes / cold air intake install", "Turbo kits/ turbo swaps/ upgraded turbos","Custom exhaust jobs/ exhaust installation", "Water pump/ thermostat", "Walnut blasting", "Tune ups", "Transmission swaps", "Clutch replacements", "Brake & rotors"]
-
-const dataSource = services.map((str, i) => {
-    return {
-        key: String(i +1),
-        name: str
-    }
-})
-
-const columns = [
-  {
-    title: <h2>Services</h2>,
-    dataIndex: "name",
-    key: "name",
-    className: 'services-table'
-  },
-]
 
 export const Services = () => {
   return (
     <div>
-      <Table dataSource={dataSource} columns={columns} pagination={false}/>
+      <h2>Committed to Quality at Every Step</h2>
+      <p>
+        Got car issues but not exactly sure what it could be? Let us diagnose
+        the problem.
+        <br />
+        When you visit Dream Build Garage, it’s important to us that your
+        experience be as smooth & convenient as possible. To better serve you &
+        your car, we keep our shop fully equipped with the latest factory-grade
+        tools & equipment available. This means we are ASE certified mechanics
+        that can handle everything your car needs, including:
+      </p>
+      <ul className="ul-services">
+        <li>A/C Service & Repairs</li>
+        <li>Engine Repairs</li>
+        <li>Brake Repairs</li>
+        <li>Oil Change Services</li>
+        <li>Check Engine Light Diagnostics</li>
+        <li>Suspension Services & Repairs</li>
+        <li>Clutch Repairs</li>
+      </ul>
+      <p>
+        With decades of experience working on European vehicles, we understands
+        the importance of quality when it comes to service, so we’ll never cut
+        corners or rush a job. You can count on us to work with you through
+        every step of the maintenance process.
+      </p>
     </div>
   )
 }
