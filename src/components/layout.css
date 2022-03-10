@@ -674,7 +674,7 @@ pre tt:after {
 .primaryBtnsContainer {
   display: flex;
   justify-content: space-around;
-  margin-bottom: 1rem;
+  margin: 1rem 0;
 }
 .about {
   border-top: 2px solid black;
