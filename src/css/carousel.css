@@ -1,0 +1,9 @@
+.carouselContainer {
+  height: 260px;
+  color: "#fff";
+  line-height: 160px;
+  text-align: center;
+  background: #364d79;
+  border: 3px solid black;
+  overflow: hidden;
+}

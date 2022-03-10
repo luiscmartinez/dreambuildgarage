@@ -2,16 +2,7 @@ import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { Carousel as AntCarousel } from "antd"
-
-const contentStyle = {
-  height: "160px",
-  color: "#fff",
-  lineHeight: "160px",
-  textAlign: "center",
-  background: "#364d79",
-  border: "3px solid black",
-  overflow: "hidden",
-}
+import "../../../css/carousel.css"
 
 export function Carousel() {
   const imageData = useStaticQuery(graphql`
@@ -21,6 +12,8 @@ export function Carousel() {
           node {
             childImageSharp {
               gatsbyImageData(
+                width: 200
+                height: 350
                 placeholder: BLURRED
                 transformOptions: { cropFocus: CENTER }
               )
@@ -38,8 +31,8 @@ export function Carousel() {
     <AntCarousel autoplay>
       {carouselImages.map((img, i) => {
         return (
-          <div key={i}>
-            <h3 style={contentStyle}>
+          <div key={i} className="carouselContainer">
+            <h3>
               <GatsbyImage image={img} />
             </h3>
           </div>
