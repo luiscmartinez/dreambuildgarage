@@ -32,9 +32,7 @@ export function Carousel() {
       {carouselImages.map((img, i) => {
         return (
           <div key={i} className="carouselContainer">
-            <h3>
-              <GatsbyImage image={img} />
-            </h3>
+            <GatsbyImage image={img} />
           </div>
         )
       })}
