@@ -9,8 +9,12 @@ const SecondPage = () => {
   const [pagination, setPagination] = useState(null)
 
   useEffect(() => {
+    let url = `https://dreambuild.herokuapp.com/api/integrations`
+    if (process.env.NODE_ENV === "development") {
+      url = process.env.NEXTJS_URL + "/integrations"
+    }
     setLoading(true)
-    fetch(`${process.env.GATSBY_SERVER_URL}/integrations/instagram`)
+    fetch(`${url}/instagram`)
       .then(res => {
         console.log("RES", res)
         return res.json()
