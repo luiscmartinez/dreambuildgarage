@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import Modal from "../components/modal"
 
 import "../css/gallery.css"
 
@@ -9,6 +10,7 @@ const SecondPage = () => {
   const [images, setImages] = useState(null)
   const [isLoading, setLoading] = useState(false)
   const [pagination, setPagination] = useState(null)
+  const [selectedImg, setSelectedImg] = useState(null)
 
   useEffect(() => {
     let url = `https://dreambuild.herokuapp.com/api/integrations`
@@ -48,12 +50,18 @@ const SecondPage = () => {
           {images &&
             images.map(image => {
               return (
-                <div className="img-wrap">
+                <div
+                  className="img-wrap"
+                  onClick={() => setSelectedImg(image.media_url)}
+                >
                   <img src={image.media_url} />
                 </div>
               )
             })}
         </div>
+        {selectedImg && (
+          <Modal selectedImg={selectedImg} setSelectedImg={setSelectedImg} />
+        )}
       </Layout>
     )
   return (
