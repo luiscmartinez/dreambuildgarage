@@ -52,7 +52,8 @@ const SecondPage = () => {
               return (
                 <div
                   className="img-wrap"
-                  onClick={() => setSelectedImg(image.media_url)}
+                  onClick={() => setSelectedImg(image)}
+                  key={image.id}
                 >
                   <img src={image.media_url} />
                 </div>

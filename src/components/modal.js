@@ -6,9 +6,11 @@ const modal = ({ selectedImg, setSelectedImg }) => {
       setSelectedImg(null)
     }
   }
+  const { media_url } = selectedImg
+
   return (
     <div className="backdrop" onClick={e => clearSelected(e)}>
-      <img src={selectedImg} />
+      <img src={media_url} />
     </div>
   )
 }
