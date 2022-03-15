@@ -3,6 +3,8 @@ import React, { useEffect, useState } from "react"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
+import "../css/gallery.css"
+
 const SecondPage = () => {
   const [images, setImages] = useState(null)
   const [isLoading, setLoading] = useState(false)
@@ -42,10 +44,16 @@ const SecondPage = () => {
       <Layout>
         <Seo title="DBG's galley" />
         <h1>Gallery</h1>
-        {images &&
-          images.map(image => {
-            return <img src={image.media_url} />
-          })}
+        <div className="img-grid">
+          {images &&
+            images.map(image => {
+              return (
+                <div className="img-wrap">
+                  <img src={image.media_url} />
+                </div>
+              )
+            })}
+        </div>
       </Layout>
     )
   return (
