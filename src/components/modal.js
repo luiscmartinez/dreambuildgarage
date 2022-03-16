@@ -10,17 +10,24 @@ const modal = ({ selectedImg, setSelectedImg }) => {
   }
   const { media_url, media_type } = selectedImg
 
-  if (media_type === "CAROUSEL_ALBUM") {
-    return (
-      <div className="backdrop" onClick={e => clearSelected(e)}>
-        <ModalCarousel img={selectedImg} />
-      </div>
-    )
+  const handleModalMediaDisplay = selectedImg => {
+    const { media_url, media_type } = selectedImg
+    if (media_type === "CAROUSEL_ALBUM") {
+      return <ModalCarousel img={selectedImg} />
+    } else if (media_type === "IMAGE") {
+      return (
+        <img
+          src={media_url}
+          alt="from DGB's Instagram account"
+          className="backdrop-img"
+        />
+      )
+    }
   }
 
   return (
     <div className="backdrop" onClick={e => clearSelected(e)}>
-      <img src={media_url} className="backdrop-img" />
+      {handleModalMediaDisplay(selectedImg)}
     </div>
   )
 }

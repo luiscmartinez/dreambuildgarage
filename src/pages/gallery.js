@@ -24,7 +24,6 @@ const SecondPage = () => {
         return res.json()
       })
       .then(data => {
-        console.log("DATA", data)
         if (data) {
           setImages(data.data)
           setPagination(data.paging)
@@ -55,7 +54,7 @@ const SecondPage = () => {
                   onClick={() => setSelectedImg(image)}
                   key={image.id}
                 >
-                  <img src={image.media_url} />
+                  <img src={image.media_url} alt="img preview" />
                 </div>
               )
             })}

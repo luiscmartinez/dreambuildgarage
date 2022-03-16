@@ -22,14 +22,31 @@ export default function ModalCarousel({ img }) {
         setLoading(false)
         console.log("DATA", data)
       })
-  }, [])
+  }, [img.id])
   if (isLoading) return <div>STILL LOADING </div>
   return (
-    <AntCarousel autoplay className="backdrop-modal">
-      {carouselImages &&
-        carouselImages.map(image => {
-          return <img src={image.media_url} key={image.id} />
-        })}
-    </AntCarousel>
+    <div className="carouselContainer">
+      <AntCarousel>
+        {carouselImages &&
+          carouselImages.map(image => {
+            if (image.media_type === "VIDEO") {
+              return (
+                <video key={image.id} controls className="carouselMedia">
+                  <track></track>
+                  <source src={image.media_url} />
+                </video>
+              )
+            }
+            return (
+              <img
+                src={image.media_url}
+                alt="from DBG's Instagram account"
+                key={image.id}
+                className="carouselMedia"
+              />
+            )
+          })}
+      </AntCarousel>
+    </div>
   )
 }

@@ -1,0 +1,9 @@
+.carouselContainer {
+  max-height: 75%;
+  max-width: 60%;
+  margin: 60px auto;
+}
+
+.carouselMedia {
+  max-width: 60%;
+}
