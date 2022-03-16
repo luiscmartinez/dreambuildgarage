@@ -8,7 +8,6 @@ const modal = ({ selectedImg, setSelectedImg }) => {
       setSelectedImg(null)
     }
   }
-  const { media_url, media_type } = selectedImg
 
   const handleModalMediaDisplay = selectedImg => {
     const { media_url, media_type } = selectedImg
@@ -19,12 +18,12 @@ const modal = ({ selectedImg, setSelectedImg }) => {
         <img
           src={media_url}
           alt="from DGB's Instagram account"
-          className="backdrop-img"
+          className="backdrop-media"
         />
       )
     } else {
       return (
-        <video controls className="carouselMedia">
+        <video controls className="backdrop-media">
           <track></track>
           <source src={media_url} />
         </video>
