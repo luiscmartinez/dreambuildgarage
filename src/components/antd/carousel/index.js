@@ -31,8 +31,8 @@ export function Carousel() {
     <AntCarousel autoplay>
       {carouselImages.map((img, i) => {
         return (
-          <div key={i} className="carouselContainer">
-            <GatsbyImage image={img} />
+          <div key={i} className="carouselItem">
+            <GatsbyImage image={img} alt="auto performance enhancements" />
           </div>
         )
       })}
