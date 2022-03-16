@@ -39,7 +39,6 @@ const SecondPage = () => {
         <h2>LOADING</h2>
       </Layout>
     )
-  //! return for when there is no images to display at the moment.
   if (images)
     return (
       <Layout>
@@ -54,7 +53,10 @@ const SecondPage = () => {
                   onClick={() => setSelectedImg(image)}
                   key={image.id}
                 >
-                  <img src={image.media_url} alt="img preview" />
+                  <img
+                    src={image?.thumbnail_url || image.media_url}
+                    alt="img preview"
+                  />
                 </div>
               )
             })}
