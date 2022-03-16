@@ -22,6 +22,13 @@ const modal = ({ selectedImg, setSelectedImg }) => {
           className="backdrop-img"
         />
       )
+    } else {
+      return (
+        <video controls className="carouselMedia">
+          <track></track>
+          <source src={media_url} />
+        </video>
+      )
     }
   }
 
