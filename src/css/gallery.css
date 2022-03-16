@@ -39,3 +39,14 @@
   box-shadow: 3px 5px 7px rgba(0, 0, 0, 0.5);
   border: 3px solid white;
 }
+.backdrop-modal {
+  display: block;
+  max-width: 60%;
+  /* 60% of the screen */
+  max-height: 80%;
+  /* 80% of the height of da screen */
+  margin: 60px auto;
+  /* auto margin left & right to position it in the middle */
+  box-shadow: 3px 5px 7px rgba(0, 0, 0, 0.5);
+  border: 3px solid white;
+}
