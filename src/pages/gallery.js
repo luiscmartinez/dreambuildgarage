@@ -6,7 +6,7 @@ import Modal from "../components/modal"
 
 import "../css/gallery.css"
 
-const SecondPage = () => {
+const Gallery = () => {
   const [images, setImages] = useState(null)
   const [isLoading, setLoading] = useState(false)
   const [pagination, setPagination] = useState(null)
@@ -74,4 +74,4 @@ const SecondPage = () => {
     </Layout>
   )
 }
-export default SecondPage
+export default Gallery
