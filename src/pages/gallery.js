@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import Modal from "../components/modal"
+import Modal from "../components/antd/modal"
 
 import "../css/gallery.css"
 

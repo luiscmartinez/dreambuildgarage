@@ -1,12 +1,11 @@
-import * as React from "react"
+import React from "react"
+import { Modal as AntModal, Button } from "antd"
 
-import ModalCarousel from "../components/antd/carousel/modalCarousel"
+import ModalCarousel from "../carousel/ModalCarousel.js"
 
-const modal = ({ selectedImg, setSelectedImg }) => {
-  const clearSelected = e => {
-    if (e.target.classList.contains("backdrop")) {
-      setSelectedImg(null)
-    }
+const Modal = ({ selectedImg, setSelectedImg }) => {
+  const handleCancel = () => {
+    setSelectedImg(null)
   }
 
   const handleModalMediaDisplay = selectedImg => {
@@ -31,11 +30,18 @@ const modal = ({ selectedImg, setSelectedImg }) => {
     }
   }
 
+  console.log("RETURNING in Modal Component ", selectedImg)
   return (
-    <div className="backdrop" onClick={e => clearSelected(e)}>
-      {handleModalMediaDisplay(selectedImg)}
-    </div>
+    <>
+      <AntModal
+        title={selectedImg.caption}
+        visible={selectedImg}
+        onCancel={handleCancel}
+      >
+        {handleModalMediaDisplay(selectedImg)}
+      </AntModal>
+    </>
   )
 }
 
-export default modal
+export default Modal
