@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from "react"
-import { Carousel as AntCarousel } from "antd"
+import React, { useEffect, useState, useRef } from "react"
+import { Carousel as AntCarousel, Button } from "antd"
 import "../../../css/modalCarousel.css"
 
 export default function ModalCarousel({ img }) {
   const [isLoading, setLoading] = useState(false)
   const [carouselImages, setCarouselImages] = useState(null)
+  const carouselRef = useRef(null)
   useEffect(() => {
     setLoading(true)
     let url = `https://dreambuild.herokuapp.com/api/instagram`
@@ -22,28 +23,44 @@ export default function ModalCarousel({ img }) {
         setLoading(false)
         console.log("DATA", data)
       })
-  }, [img.id])
-  if (isLoading) return <div>STILL LOADING </div>
+  }, [carouselImages])
+  const btns = () => (
+    <div>
+      <Button
+        onClick={() => {
+          carouselRef.current.next()
+        }}
+      >
+        goto next
+      </Button>
+    </div>
+  )
+  if (isLoading) return <div key={img.id + "passdown"}>STILL LOADING </div>
   return (
-    <div className="carouselContainer">
-      <AntCarousel>
+    <div className="carouselContainer" key={img.id + "passdown"}>
+      <AntCarousel ref={carouselRef}>
         {carouselImages &&
           carouselImages.map(image => {
-            if (image.media_type === "VIDEO") {
+            const { media_type } = image
+            if (media_type === "VIDEO") {
               return (
-                <video key={image.id} controls className="carouselMedia">
-                  <track></track>
-                  <source src={image.media_url} />
-                </video>
+                <div key={image.id}>
+                  <video controls className="carouselMedia">
+                    <track></track>
+                    <source src={image.media_url} />
+                  </video>
+                  {btns()}
+                </div>
               )
             }
             return (
-              <img
-                src={image.media_url}
-                alt="from DBG's Instagram account"
-                key={image.id}
-                className="carouselMedia"
-              />
+              <div key={image.id}>
+                <img
+                  src={image.media_url}
+                  alt="from DBG's Instagram account"
+                  className="carouselMedia"
+                />
+              </div>
             )
           })}
       </AntCarousel>
