@@ -2,7 +2,6 @@ import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { Carousel as AntCarousel } from "antd"
-import "../../../css/carousel.css"
 
 export function Carousel() {
   const imageData = useStaticQuery(graphql`
@@ -31,7 +30,7 @@ export function Carousel() {
     <AntCarousel autoplay>
       {carouselImages.map((img, i) => {
         return (
-          <div key={i} className="carouselItem">
+          <div key={i} className="homeCarousel">
             <GatsbyImage image={img} alt="auto performance enhancements" />
           </div>
         )
