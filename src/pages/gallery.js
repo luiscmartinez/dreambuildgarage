@@ -2,11 +2,11 @@ import React, { useEffect, useState } from "react"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import Modal from "../components/modal"
+import Modal from "../components/antd/modal"
 
 import "../css/gallery.css"
 
-const SecondPage = () => {
+const Gallery = () => {
   const [images, setImages] = useState(null)
   const [isLoading, setLoading] = useState(false)
   const [pagination, setPagination] = useState(null)
@@ -24,7 +24,6 @@ const SecondPage = () => {
         return res.json()
       })
       .then(data => {
-        console.log("DATA", data)
         if (data) {
           setImages(data.data)
           setPagination(data.paging)
@@ -40,7 +39,6 @@ const SecondPage = () => {
         <h2>LOADING</h2>
       </Layout>
     )
-  //! return for when there is no images to display at the moment.
   if (images)
     return (
       <Layout>
@@ -55,7 +53,10 @@ const SecondPage = () => {
                   onClick={() => setSelectedImg(image)}
                   key={image.id}
                 >
-                  <img src={image.media_url} />
+                  <img
+                    src={image?.thumbnail_url || image.media_url}
+                    alt="img preview"
+                  />
                 </div>
               )
             })}
@@ -73,4 +74,4 @@ const SecondPage = () => {
     </Layout>
   )
 }
-export default SecondPage
+export default Gallery
