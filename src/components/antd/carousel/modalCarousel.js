@@ -35,17 +35,17 @@ export default function ModalCarousel({ img }) {
       </Button>
     </div>
   )
-  if (isLoading) return <div key={img.id + "passdown"}>STILL LOADING </div>
+  if (isLoading) return <div>STILL LOADING </div>
   return (
-    <div className="carouselContainer" key={img.id + "passdown"}>
+    <div className="carouselContainer">
       <AntCarousel ref={carouselRef}>
         {carouselImages &&
           carouselImages.map((image, i) => {
             const { media_type } = image
             if (media_type === "VIDEO") {
               return (
-                <div key={image.id + i}>
-                  <video controls className="carouselMedia">
+                <div key={image.id + i} className="media-wrapper">
+                  <video controls className="media">
                     <track></track>
                     <source src={image.media_url} />
                   </video>
@@ -54,11 +54,11 @@ export default function ModalCarousel({ img }) {
               )
             }
             return (
-              <div key={image.id + i}>
+              <div key={image.id + i} className="media-wrapper">
                 <img
                   src={image.media_url}
                   alt="from DBG's Instagram account"
-                  className="carouselMedia"
+                  className="media"
                 />
               </div>
             )

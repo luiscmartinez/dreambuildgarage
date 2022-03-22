@@ -1,9 +1,6 @@
 .carouselContainer {
 }
 
-.carouselMedia {
-}
-
 .homeCarousel {
   color: "#fff";
   line-height: 160px;
@@ -12,4 +9,13 @@
   border: 3px solid black;
   overflow: hidden;
   width: 100%;
+}
+
+.media-wrapper {
+  display: flex;
+  height: 100%;
+}
+.media {
+  width: 100%;
+  height: auto; /* spec says no percent allowed here */
 }

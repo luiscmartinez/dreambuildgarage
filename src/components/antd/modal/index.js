@@ -30,7 +30,6 @@ const Modal = ({ selectedImg, setSelectedImg }) => {
     }
   }
 
-  console.log("RETURNING in Modal Component ", selectedImg)
   return (
     <>
       <AntModal
