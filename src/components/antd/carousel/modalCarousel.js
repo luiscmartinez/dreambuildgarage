@@ -28,6 +28,13 @@ export default function ModalCarousel({ img }) {
     <div>
       <Button
         onClick={() => {
+          carouselRef.current.prev()
+        }}
+      >
+        goto previous
+      </Button>
+      <Button
+        onClick={() => {
           carouselRef.current.next()
         }}
       >
@@ -49,7 +56,6 @@ export default function ModalCarousel({ img }) {
                     <track></track>
                     <source src={image.media_url} />
                   </video>
-                  {btns()}
                 </div>
               )
             }
@@ -64,6 +70,8 @@ export default function ModalCarousel({ img }) {
             )
           })}
       </AntCarousel>
+      {btns()}
+      <p>{img.caption}</p>
     </div>
   )
 }
