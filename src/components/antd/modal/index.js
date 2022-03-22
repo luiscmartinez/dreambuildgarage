@@ -32,11 +32,7 @@ const Modal = ({ selectedImg, setSelectedImg }) => {
 
   return (
     <>
-      <AntModal
-        title={selectedImg.caption}
-        visible={selectedImg}
-        onCancel={handleCancel}
-      >
+      <AntModal visible={selectedImg} onCancel={handleCancel}>
         {handleModalMediaDisplay(selectedImg)}
       </AntModal>
     </>
