@@ -1,7 +1,7 @@
 import React from "react"
 import { Modal as AntModal, Button } from "antd"
 
-import ModalCarousel from "../carousel/ModalCarousel.js"
+import ModalCarousel from "../carousel/modalCarousel"
 
 const Modal = ({ selectedImg, setSelectedImg }) => {
   const handleCancel = () => {
