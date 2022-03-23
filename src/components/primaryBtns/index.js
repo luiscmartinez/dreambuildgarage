@@ -14,6 +14,9 @@ export const PrimaryBtns = () => {
       <Link to="/contact/">
         <Button type="primary">Visit Us</Button>
       </Link>
+      <Link to="/gallery/">
+        <Button type="primary">Gallery</Button>
+      </Link>
     </div>
   )
 }
