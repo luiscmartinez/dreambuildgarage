@@ -2,13 +2,14 @@ module.exports = {
   siteMetadata: {
     title: `DreamBuildGarage.llc`,
     description: `DBG's official site. Keeping you up with the latest news, tunes, & services. Book your appointment today!`,
-    author: `@luismartinez`,
-    siteUrl: `https://dreambuildgarage.netlify.app`,
+    author: `@luiscmartinez`,
+    siteUrl: `https://dreambuildgarage.com`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-transformer-sharp`,
       options: {
@@ -45,6 +46,7 @@ module.exports = {
         path: `${__dirname}/src/images/gallery/`,
       },
     },
+
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
