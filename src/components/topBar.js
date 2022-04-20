@@ -22,26 +22,28 @@ export const TopBar = () => {
   const { address, phone, email } = contactInfo
   return (
     <div className="topbar">
-      <div className="topbar-item">
+      <a href={`tel:${phone.replace(/\D/g, "")}`} className="topbar-item">
         <div className="topbar-icon">
           <BiPhoneCall />
         </div>
         <div className="topbar-item-text">{phone}</div>
-      </div>
-      <div className="topbar-item email">
+      </a>
+      <a href={`mailto:${email}`} className="topbar-item email">
         <div className="topbar-icon">
           <BiEnvelope />
         </div>
         <div className="topbar-item-text">EMAIL US</div>
-      </div>
-      <div className="topbar-item">
+      </a>
+      <a
+        href="https://www.google.com/maps/place/7542+Warner+Ave,+Huntington+Beach,+CA+92647/@33.71529,-117.997268,15z/data=!4m5!3m4!1s0x80dd268b1cfa4ded:0x4cea55e336718a9!8m2!3d33.7152898!4d-117.9972678?hl=en-US"
+        target="_blank"
+        className="topbar-item"
+      >
         <div className="topbar-icon">
           <BiMap />
         </div>
         <div className="topbar-item-text">GET DIRECTIONS</div>
-
-        {/* {address} */}
-      </div>
+      </a>
     </div>
   )
 }
