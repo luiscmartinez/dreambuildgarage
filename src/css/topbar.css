@@ -1,0 +1,33 @@
+.topbar {
+    background-color: #111111;
+    color: #15e5ed;
+    display: flex;
+    padding: 15px 0;
+    justify-content: center;
+    flex-wrap: wrap;
+    font-family: Helvetica Neue,Helvetica,Arial,sans-serif; 
+}
+
+.topbar-item {
+ display: flex;
+ margin:5px;
+ font-size: 1rem;
+ font-weight:bold;
+}
+
+.topbar-item-text {
+    color:white;
+}
+
+.topbar-icon {
+    position: relative;
+    top: 3px;
+}
+
+/* below this screen size */
+@media (max-width: 440px) {
+    /* hides email */
+    .email {
+        display: none;
+    }
+}
