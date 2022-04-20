@@ -1,3 +1,12 @@
+require("dotenv").config()
+
+const strapiConfig = {
+  apiURL: process.env.STRAPI_API_URL,
+  accessToken: process.env.STRAPI_TOKEN,
+  collectionTypes: ["about", "service", "contact"],
+  // singleTypes: [],
+  // queryLimit: 1000,
+}
 module.exports = {
   siteMetadata: {
     title: `DreamBuildGarage.llc`,
@@ -45,6 +54,10 @@ module.exports = {
         name: `galleryImages`,
         path: `${__dirname}/src/images/gallery/`,
       },
+    },
+    {
+      resolve: `gatsby-source-strapi`,
+      options: strapiConfig,
     },
 
     // this (optional) plugin enables Progressive Web App + Offline functionality
