@@ -1,7 +1,7 @@
 import * as React from "react"
-import PropTypes from "prop-types"
 import { Link } from "gatsby"
-import { DropDownMenu } from "../components/antd"
+import HamburgerMenu from "react-hamburger-menu"
+import "../css/navigation.css"
 
 function styleTitle() {
   const dream = "Dream"
@@ -18,19 +18,40 @@ function styleTitle() {
   )
   return styledTitle
 }
-const Header = () => (
-  <header className="header">
-    <div className="headerContainer">
-      <h1 className="headerTitle">
-        <Link to="/" className="headerLink">
-          {styleTitle()}
-        </Link>
-      </h1>
-      <div className="hamburgerMenu">
-        <DropDownMenu />
+const Header = () => {
+  const [isHamburgerOpen, setHamburger] = React.useState(false)
+
+  return (
+    <header className="site-navigation">
+      <div className="headerContainer">
+        <h1 className="headerTitle">
+          <Link to="/" className="headerLink">
+            {styleTitle()}
+          </Link>
+        </h1>
+        <div className="hamburgerMenu">
+          <HamburgerMenu
+            isOpen={isHamburgerOpen}
+            menuClicked={() => setHamburger(prev => !prev)}
+            width={18}
+            height={15}
+            strokeWidth={1}
+            rotate={0}
+            color="white"
+            borderRadius={0}
+            animationDuration={0.5}
+          />
+        </div>
       </div>
-    </div>
-  </header>
-)
+      <nav>
+        <ul style={{ display: isHamburgerOpen ? "block" : "none" }}>
+          {["ABOUT US", "OVER SERVICES", "TESTIMONIALS", "CONTACT"].map(eli => {
+            return <li className="navigation-item">{eli}</li>
+          })}
+        </ul>
+      </nav>
+    </header>
+  )
+}
 
 export default Header
