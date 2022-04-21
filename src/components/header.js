@@ -1,34 +1,22 @@
 import * as React from "react"
-import { Link } from "gatsby"
+// import { Link } from "gatsby"
+import { Link } from "react-scroll"
 import HamburgerMenu from "react-hamburger-menu"
 import "../css/navigation.css"
 
-function styleTitle() {
-  const dream = "Dream"
-  const build = "Build"
-  const garage = "Garage"
-  const llc = ".llc"
-  const styledTitle = (
-    <div>
-      {dream}
-      <span style={{ color: "#38bdf9" }}>{build}</span>
-      {garage}
-      {llc}
-    </div>
-  )
-  return styledTitle
-}
+const navigations = [
+  { id: "about", title: "ABOUT US" },
+  { id: "services", title: "OUR SERVICES" },
+  { id: "testimonials", title: "TESTIMONIALS" },
+  { id: "contact", title: "CONTACT" },
+]
 const Header = () => {
   const [isHamburgerOpen, setHamburger] = React.useState(false)
 
   return (
     <header className="site-navigation">
       <div className="headerContainer">
-        <h1 className="headerTitle">
-          <Link to="/" className="headerLink">
-            {styleTitle()}
-          </Link>
-        </h1>
+        <h1 className="headerTitle">{"styleTitle()"}</h1>
         <div className="hamburgerMenu">
           <HamburgerMenu
             isOpen={isHamburgerOpen}
@@ -45,8 +33,14 @@ const Header = () => {
       </div>
       <nav>
         <ul style={{ display: isHamburgerOpen ? "block" : "none" }}>
-          {["ABOUT US", "OVER SERVICES", "TESTIMONIALS", "CONTACT"].map(eli => {
-            return <li className="navigation-item">{eli}</li>
+          {navigations.map(eli => {
+            return (
+              <li className="navigation-item" key={eli.id}>
+                <Link to={eli.id} spy={true} smooth={true}>
+                  {eli.title}
+                </Link>
+              </li>
+            )
           })}
         </ul>
       </nav>
