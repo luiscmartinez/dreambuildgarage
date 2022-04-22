@@ -23,3 +23,12 @@
     font-weight:bold;
 }
 
+.inner-nav {
+}
+
+.inner-nav-close {
+    display: none;
+}
+.mainMenu {
+    border: 2px solid pink;
+}

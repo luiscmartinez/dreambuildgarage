@@ -53,12 +53,17 @@ const Header = () => {
           />
         </div>
       </div>
-      <nav>
-        <ul style={{ display: isHamburgerOpen ? "block" : "none" }}>
+      <nav className={isHamburgerOpen ? "inner-nav" : "inner-nav-close"}>
+        <ul className="mainMenu">
           {navigations.map(eli => {
             return (
               <li className="navigation-item" key={eli.id}>
-                <Link to={eli.id} spy={true} smooth={true}>
+                <Link
+                  to={eli.id}
+                  spy={true}
+                  smooth={true}
+                  onClick={() => setHamburger(prev => !prev)}
+                >
                   {eli.title}
                 </Link>
               </li>
