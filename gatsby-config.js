@@ -38,7 +38,7 @@ module.exports = {
         // https://css-tricks.com/meta-theme-color-and-trickery/
         // theme_color: `#663399`,
         display: `standalone`,
-        icon: `src/images/dbg_logo.jpeg`, // This path is relative to the root of the site.
+        icon: `src/images/assets/dbg_logo.jpeg`, // This path is relative to the root of the site.
       },
     },
     {
@@ -53,6 +53,13 @@ module.exports = {
       options: {
         name: `galleryImages`,
         path: `${__dirname}/src/images/gallery/`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `assetImages`,
+        path: `${__dirname}/src/images/assets/`,
       },
     },
     {
