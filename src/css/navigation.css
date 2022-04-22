@@ -1,8 +1,24 @@
 .site-navigation {
     background-color: #080000;
     border: 2px solid purple;
+    position: fixed;
+    z-index: 1;
+    width: 100%;
 }
 
 .navigation-item {
     color:white;
+    list-style: none;
+    font-family: Helvetica Neue,Helvetica,Arial,sans-serif; 
+    font-size: 1.2rem;
+    border-top: 2px solid #1f1f20;
+
 }
+.site-navigation ul {
+    margin: 0px 20px;
+}
+.navigation-item a {
+    color:white;
+    font-weight:bold;
+}
+
