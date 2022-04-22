@@ -1,7 +1,8 @@
 .site-navigation {
     background-color: #080000;
     border: 2px solid purple;
-    position: fixed;
+    position: sticky;
+    top:0;
     z-index: 1;
     width: 100%;
 }
