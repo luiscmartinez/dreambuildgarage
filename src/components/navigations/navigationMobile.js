@@ -10,10 +10,22 @@ export default function NavigationMobile({
   isHamburgerOpen,
 }) {
   return (
-    <header className="site-navigation" id="header">
+    <header className="site-navigation">
       <div className="headerContainer">
         <h1 className="headerTitle"></h1>
-        <GatsbyImage image={image} style={{ borderRadius: "30px" }} />
+        <Link
+          to="topbar"
+          spy={true}
+          smooth={true}
+          onClick={() => {
+            if (isHamburgerOpen) {
+              // close the navigation dropdown
+              setHamburger(false)
+            }
+          }}
+        >
+          <GatsbyImage image={image} style={{ borderRadius: "30px" }} />
+        </Link>
         <div className="hamburgerMenu">
           <HamburgerMenu
             isOpen={isHamburgerOpen}

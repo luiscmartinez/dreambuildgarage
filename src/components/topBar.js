@@ -21,7 +21,7 @@ export const TopBar = () => {
   const contactInfo = contactData.allStrapiContact.nodes[0]
   const { address, phone, email } = contactInfo
   return (
-    <div className="topbar">
+    <div className="topbar" id="topbar">
       <a href={`tel:${phone.replace(/\D/g, "")}`} className="topbar-item">
         <div className="topbar-icon">
           <BiPhoneCall />
