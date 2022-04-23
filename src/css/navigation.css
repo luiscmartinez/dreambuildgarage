@@ -1,9 +1,9 @@
 .site-navigation {
     background-color: #080000;
-    border: 2px solid purple;
+    /* border: 2px solid purple; */
     position: sticky;
     top:0;
-    z-index: 1;
+    z-index: 10;
     width: 100%;
 }
 
@@ -35,10 +35,36 @@
     margin: auto;
     height: 125px;
 }
+
 .inner-nav {
+    display:block;
+    opacity: 0;
+    position: absolute;
+    z-index: 0;
+}
+
+.inner-nav-open {
+    display: block;
+    position: absolute;
+    background-color: #080000;
+    width: 100%;
+    opacity: 1;
+    animation: slidein 0.5s ease-in;
 }
 
 .inner-nav-close {
     display: none;
 }
 
+
+@keyframes slidein {
+    from {
+        opacity: 0;
+        transform: translateY(-70px);
+    }
+  
+    to {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+  }
