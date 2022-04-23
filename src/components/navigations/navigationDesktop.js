@@ -6,7 +6,7 @@ export default function NavigationDesktop({ navigations, image }) {
   const renderListItems = list => {
     return list.map(eli => {
       return (
-        <li className="navigation-item" key={eli.id}>
+        <li className="navigation-item desktop" key={eli.id}>
           <Link to={eli.id} spy={true} smooth={true}>
             {eli.title}
           </Link>
