@@ -1,0 +1,47 @@
+.topbar {
+    background-color: #111111;
+    display: flex;
+    padding: 15px 0;
+    justify-content: center;
+    flex-wrap: wrap;
+    font-family: Helvetica Neue,Helvetica,Arial,sans-serif; 
+}
+
+.topbar-item {
+ display: flex;
+ margin:5px;
+ color: #15e5ed;
+ font-size: 1rem;
+ font-weight:bold;
+}
+
+.topbar-item:visited {
+    color: #15e5ed;
+}
+.topbar-item:active {
+    color: #15e5ed; 
+}
+
+.topbar-item:hover {
+    color: #15e5ed; 
+}
+
+.topbar-item-text {
+    color:white;
+}
+.topbar-item-text:hover {
+    color: #15e5ed; 
+}
+
+.topbar-icon {
+    position: relative;
+    top: 3px;
+}
+
+/* below this screen size */
+@media (max-width: 440px) {
+    /* hides email */
+    .email {
+        display: none;
+    }
+}

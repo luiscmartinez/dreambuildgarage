@@ -10,7 +10,10 @@ import { PrimaryBtns } from "../components/primaryBtns"
 const IndexPage = () => {
   return (
     <Layout>
-      <Seo title="Dream Build Garage" />
+      <Seo
+        title="Dream Build Garage"
+        description="DBG's official site. Keeping you up with the latest news, tunes, & services. Book your appointment today!"
+      />
       <Carousel />
       <PrimaryBtns />
       <h3

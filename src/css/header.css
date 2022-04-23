@@ -1,0 +1,8 @@
+.headerContainer {
+    padding: 1.45rem 1.085rem;
+    display: flex;
+    justify-content: space-between;
+  }
+.headerTitle {
+    color: white;
+}
