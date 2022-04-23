@@ -15,20 +15,28 @@
     border-top: 2px solid #1f1f20;
 
 }
-.site-navigation ul {
+
+.inner-nav-mobile-list {
     margin: 0px 20px;
 }
 .navigation-item a {
     color:white;
     font-weight:bold;
 }
-
+.inner-nav-desktop {
+}
+.inner-nav-desktop-list {
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 70%;
+    margin: auto;
+    height: 125px;
+}
 .inner-nav {
 }
 
 .inner-nav-close {
     display: none;
 }
-.mainMenu {
-    border: 2px solid pink;
-}
+

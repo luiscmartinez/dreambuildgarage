@@ -1,11 +1,11 @@
 import * as React from "react"
 import { graphql, useStaticQuery } from "gatsby"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import { Link } from "react-scroll"
+import { getImage } from "gatsby-plugin-image"
 import { useMedia } from "use-media"
 import "../css/navigation.css"
 import "../css/header.css"
 import NavigationMobile from "./navigations/navigationMobile"
+import NavigationDesktop from "./navigations/navigationDesktop"
 
 const navigations = [
   { id: "about", title: "ABOUT US" },
@@ -36,7 +36,7 @@ const Header = () => {
     return getImage(edge.node.childrenImageSharp[0])
   })[0]
   if (isLarge) {
-    return <div>working on it</div>
+    return <NavigationDesktop navigations={navigations} image={image} />
   } else {
     return (
       <NavigationMobile

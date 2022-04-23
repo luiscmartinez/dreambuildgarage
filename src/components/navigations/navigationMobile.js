@@ -41,7 +41,7 @@ export default function NavigationMobile({
         </div>
       </div>
       <nav className={isHamburgerOpen ? "inner-nav" : "inner-nav-close"}>
-        <ul className="mainMenu">
+        <ul className="inner-nav-mobile-list">
           {navigations.map(eli => {
             return (
               <li className="navigation-item" key={eli.id}>
