@@ -2,6 +2,7 @@ import React from "react"
 import { Link } from "react-scroll"
 import { GatsbyImage } from "gatsby-plugin-image"
 import HamburgerMenu from "react-hamburger-menu"
+import useOnClickOutside from "use-onclickoutside"
 
 export default function NavigationMobile({
   setHamburger,
@@ -9,8 +10,17 @@ export default function NavigationMobile({
   image,
   isHamburgerOpen,
 }) {
+  const siteNavigationRef = React.useRef(null)
+
+  useOnClickOutside(siteNavigationRef, e => {
+    if (isHamburgerOpen) {
+      // close the navigation dropdown
+      setHamburger(false)
+    }
+  })
+
   return (
-    <header className="site-navigation">
+    <header className="site-navigation" ref={siteNavigationRef}>
       <div className="headerContainer">
         <h1 className="headerTitle"></h1>
         <Link
