@@ -1,9 +1,11 @@
 import React from "react"
+import { Link } from "react-scroll"
 import { graphql, useStaticQuery } from "gatsby"
-import { getImage, GatsbyImage } from "gatsby-plugin-image"
+import { getImage } from "gatsby-plugin-image"
 
 import { convertToBgImage } from "gbimage-bridge"
 import BackgroundImage from "gatsby-background-image"
+import "../css/cta.css"
 
 export const Cta = () => {
   const { placeholderImage } = useStaticQuery(
@@ -18,18 +20,21 @@ export const Cta = () => {
                 }
               }
             }
+            title
+            description
+            buttonTitle
           }
         }
       }
     `
   )
-  console.log("getBackgrounplaceholderImagedImage", placeholderImage)
-  const image = getImage(
-    placeholderImage.nodes[0].backgroundImg.localFile.childImageSharp
-  )
+
+  const { backgroundImg, description, title, buttonTitle } =
+    placeholderImage.nodes[0]
+
+  const image = getImage(backgroundImg.localFile.childImageSharp)
   // Use like this:
   const bgImage = convertToBgImage(image)
-  console.log("IMG DEFINED?", bgImage)
 
   return (
     <BackgroundImage
@@ -38,8 +43,22 @@ export const Cta = () => {
       {...bgImage}
       preserveStackingContext
     >
-      <div style={{ minHeight: 1000, minWidth: 1000 }}>
-        <h2>gatsby-background-image</h2>
+      {/* these styles = are applied to background image */}
+      <div style={{ minHeight: 1000 }}>
+        <div className="cta-content">
+          <h1>
+            <span>
+              {title}
+              <br></br>
+              {description}
+            </span>
+          </h1>
+          <div>
+            <Link to="about" smooth={true}>
+              {buttonTitle}
+            </Link>
+          </div>
+        </div>
       </div>
     </BackgroundImage>
   )
