@@ -36,6 +36,16 @@ export const Cta = () => {
   // Use like this:
   const bgImage = convertToBgImage(image)
 
+  const handleTextColor = text => {
+    const words = text.split(" ")
+
+    const colorizeCapitalWord = word => {
+      const evaluation = word === word.toUpperCase()
+      return <span style={{ color: evaluation && "#1b88ca" }}> {word}</span>
+    }
+
+    return words.map(colorizeCapitalWord)
+  }
   return (
     <BackgroundImage
       Tag="section"
@@ -48,12 +58,12 @@ export const Cta = () => {
         <div className="cta-content">
           <h1>
             <span>
-              {title}
+              {handleTextColor(title)}
               <br></br>
-              {description}
+              {handleTextColor(description)}
             </span>
           </h1>
-          <div>
+          <div className="cta-button">
             <Link to="about" smooth={true}>
               {buttonTitle}
             </Link>
