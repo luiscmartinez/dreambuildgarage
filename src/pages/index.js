@@ -2,9 +2,10 @@ import * as React from "react"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import { Carousel } from "../components/antd"
-import { Blocks } from "../components/blocks"
 import { About } from "../components/about"
+import { Blocks } from "../components/blocks"
+import { Cta } from "../components/cta"
+import { Carousel } from "../components/antd"
 import { PrimaryBtns } from "../components/primaryBtns"
 
 const IndexPage = () => {
@@ -14,6 +15,7 @@ const IndexPage = () => {
         title="Dream Build Garage"
         description="DBG's official site. Keeping you up with the latest news, tunes, & services. Book your appointment today!"
       />
+      <Cta />
       <Carousel />
       <PrimaryBtns />
       <h3
