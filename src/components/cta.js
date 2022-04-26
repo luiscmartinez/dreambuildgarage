@@ -5,6 +5,7 @@ import { getImage } from "gatsby-plugin-image"
 
 import { convertToBgImage } from "gbimage-bridge"
 import BackgroundImage from "gatsby-background-image"
+import { useMedia } from "use-media"
 import "../css/cta.css"
 
 export const Cta = () => {
@@ -46,6 +47,9 @@ export const Cta = () => {
 
     return words.map(colorizeCapitalWord)
   }
+
+  const isLarge = useMedia({ minWidth: 960 })
+
   return (
     <BackgroundImage
       Tag="section"
@@ -54,7 +58,7 @@ export const Cta = () => {
       preserveStackingContext
     >
       {/* these styles = are applied to background image */}
-      <div style={{ minHeight: 1000 }}>
+      <div style={{ minHeight: isLarge ? 900 : 600 }}>
         <div className="cta-content">
           <h1>
             <span>
