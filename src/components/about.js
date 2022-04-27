@@ -22,8 +22,9 @@ export const About = () => {
 
   return (
     <div className="site-about-section">
-      <div className="about">
+      <div className="about-inner-wrapper">
         <h2>{about.title}</h2>
+        <div className="break"></div>
         <p>{about.description}</p>
         <div className="about-btn-wrapper">
           <Link to="services" smooth={true} className="about-section-btn">
