@@ -5,7 +5,6 @@ import Seo from "../components/seo"
 import { About } from "../components/about"
 import { Blocks } from "../components/blocks"
 import { Cta } from "../components/cta"
-import { Carousel } from "../components/antd"
 import { PrimaryBtns } from "../components/primaryBtns"
 
 const IndexPage = () => {
@@ -16,7 +15,7 @@ const IndexPage = () => {
         description="DBG's official site. Keeping you up with the latest news, tunes, & services. Book your appointment today!"
       />
       <Cta />
-      <Carousel />
+      <About />
       <PrimaryBtns />
       <h3
         style={{
@@ -28,7 +27,6 @@ const IndexPage = () => {
         5 STAR QUALITY FOR ALL YOUR PERFORMANCE AND UPGRADE NEEDS
       </h3>
       <Blocks />
-      <About />
     </Layout>
   )
 }
