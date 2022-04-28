@@ -8,6 +8,7 @@ import { Cta } from "../components/cta"
 import { AboutFooter } from "../components/aboutFooter"
 import { PrimaryBtns } from "../components/primaryBtns"
 import { Services } from "../components/services"
+import { Testimonials } from "../components/testimonials"
 
 const IndexPage = () => {
   return (
@@ -20,6 +21,7 @@ const IndexPage = () => {
       <About />
       <AboutFooter />
       <Services />
+      <Testimonials />
       <PrimaryBtns />
       <h3
         style={{

@@ -3,7 +3,7 @@ require("dotenv").config()
 const strapiConfig = {
   apiURL: process.env.STRAPI_API_URL,
   accessToken: process.env.STRAPI_TOKEN,
-  collectionTypes: ["about", "service", "contact", "hero"],
+  collectionTypes: ["about", "service", "contact", "hero", "testimonial"],
   // singleTypes: [],
   // queryLimit: 1000,
 }
