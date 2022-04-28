@@ -5,7 +5,9 @@ import Seo from "../components/seo"
 import { About } from "../components/about"
 import { Blocks } from "../components/blocks"
 import { Cta } from "../components/cta"
+import { AboutFooter } from "../components/aboutFooter"
 import { PrimaryBtns } from "../components/primaryBtns"
+import { Services } from "../components/services"
 
 const IndexPage = () => {
   return (
@@ -16,6 +18,8 @@ const IndexPage = () => {
       />
       <Cta />
       <About />
+      <AboutFooter />
+      <Services />
       <PrimaryBtns />
       <h3
         style={{
