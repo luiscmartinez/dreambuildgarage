@@ -21,7 +21,7 @@ export const About = () => {
   const about = aboutData.allStrapiAbout.edges[0].node
 
   return (
-    <div className="site-about-section">
+    <div id="about" className="site-about-section">
       <div className="about-inner-wrapper">
         <h2>{about.title}</h2>
         <div className="break"></div>
