@@ -25,12 +25,12 @@
 .about-inner-wrapper p {
   font-size: medium;
   margin-bottom: 3rem;
+  margin-top: 1rem;
 }
 .break {
   border: 1px solid #197d81;
   width: 5rem;
   justify-self: center;
-  margin-bottom: 2rem;
 }
 .about-section-btn {
   background-color: #ffffff;
