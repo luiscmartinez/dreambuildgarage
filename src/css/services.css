@@ -3,6 +3,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  background-color: #ffffff;
 }
 .site-services-section h1 {
   margin-top: 1.5rem;
