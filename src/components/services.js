@@ -2,6 +2,7 @@ import React from "react"
 import ReactMarkdown from "react-markdown"
 import { useStaticQuery, graphql } from "gatsby"
 import { getImage, GatsbyImage } from "gatsby-plugin-image"
+import { ServiceFooter } from "./servicesFooter"
 
 import "../css/services.css"
 
@@ -60,6 +61,7 @@ export const Services = () => {
           )
         })}
       </div>
+      <ServiceFooter />
     </div>
   )
 }

@@ -1,0 +1,45 @@
+.services-footer {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 4rem;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+.services-footer h2 {
+  font-weight: 400;
+}
+
+.services-footer-inner {
+  display: flex;
+  margin-bottom: 4rem;
+}
+
+.service-footer-message {
+  margin-left: 1rem;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  font-size: large;
+}
+
+.services-footer-btn {
+  border: 1px solid #707070;
+  border-radius: 1rem;
+  padding: 0.5rem;
+  font-size: large;
+  background-color: #1b88ca;
+  font-weight: bold;
+}
+
+.services-footer-btn a {
+  color: white;
+}
+
+.service-footer-number {
+  margin-left: 0.3rem;
+}
+
+.service-footer-number a {
+  color: #1b88ca;
+}
