@@ -1,0 +1,36 @@
+.site-about-footer {
+  background-color: #140303;
+  display: flex;
+  justify-content: space-around;
+  border: 2px solid pink;
+}
+
+.about-footer-inner {
+  border: 2px solid purple;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.about-footer-section {
+  color: white;
+  border: 2px solid red;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin: 50px;
+  text-align: center;
+}
+
+.about-footer-bottom {
+  color: #1b88ca;
+}
+
+/* below this screen size */
+@media (max-width: 768px) {
+  .about-footer-inner {
+    flex-direction: column;
+  }
+}
