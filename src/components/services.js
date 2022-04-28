@@ -2,6 +2,8 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { getImage, GatsbyImage } from "gatsby-plugin-image"
 
+import "../css/services.css"
+
 export const Services = () => {
   const serviceData = useStaticQuery(graphql`
     query ServiceQuery {
@@ -30,8 +32,9 @@ export const Services = () => {
     }
   `)
   return (
-    <div id="services">
-      <h2>Committed to Quality at Every Step</h2>
+    <div id="services" className="site-services-section">
+      <h1>Our Services</h1>
+      <div className="break service-divider"></div>
       {serviceData.allStrapiService.edges.map(({ node }) => {
         const { description, image, id, title } = node
 
@@ -43,10 +46,10 @@ export const Services = () => {
         const descriptionMarkdown = description.data.description
 
         return (
-          <div key={id}>
-            <GatsbyImage image={imageSharp[0]} />
-            <h3>{title}</h3>
-            <p>{descriptionMarkdown}</p>
+          <div key={id} className="service-card">
+            <GatsbyImage image={imageSharp[0]} className="service-card-image" />
+            <h3 className="service-card-title">{title}</h3>
+            <p className="service-card-description">{descriptionMarkdown}</p>
           </div>
         )
       })}
