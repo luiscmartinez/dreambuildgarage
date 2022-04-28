@@ -1,4 +1,5 @@
 import React from "react"
+import ReactMarkdown from "react-markdown"
 import { useStaticQuery, graphql } from "gatsby"
 import { getImage, GatsbyImage } from "gatsby-plugin-image"
 
@@ -37,7 +38,6 @@ export const Services = () => {
       <div className="break service-divider"></div>
       {serviceData.allStrapiService.edges.map(({ node }) => {
         const { description, image, id, title } = node
-
         const imageSharp = image.localFile.childrenImageSharp.map(child => {
           const gatsbyImage = getImage(child.gatsbyImageData)
           return gatsbyImage
@@ -49,7 +49,9 @@ export const Services = () => {
           <div key={id} className="service-card">
             <GatsbyImage image={imageSharp[0]} className="service-card-image" />
             <h3 className="service-card-title">{title}</h3>
-            <p className="service-card-description">{descriptionMarkdown}</p>
+            <p className="service-card-description">
+              <ReactMarkdown>{descriptionMarkdown}</ReactMarkdown>
+            </p>
           </div>
         )
       })}

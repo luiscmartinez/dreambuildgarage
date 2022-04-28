@@ -9,6 +9,9 @@
 }
 /* above this screen size */
 @media (min-width: 768px) {
+  .site-services-section {
+    flex-direction: row;
+  }
 }
 .service-divider {
   border-color: #15e5ed;
@@ -36,5 +39,5 @@
 }
 
 .service-card-description {
-  align-self: flex-end;
+  align-self: flex-start;
 }
