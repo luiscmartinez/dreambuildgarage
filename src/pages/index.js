@@ -8,6 +8,7 @@ import { Cta } from "../components/cta"
 import { AboutFooter } from "../components/aboutFooter"
 import { PrimaryBtns } from "../components/primaryBtns"
 import { Services } from "../components/services"
+import { Testimonials } from "../components/testimonials"
 
 const IndexPage = () => {
   return (
@@ -20,17 +21,7 @@ const IndexPage = () => {
       <About />
       <AboutFooter />
       <Services />
-      <PrimaryBtns />
-      <h3
-        style={{
-          textAlign: "center",
-          fontWeight: "500",
-          fontFamily: "monospace",
-        }}
-      >
-        5 STAR QUALITY FOR ALL YOUR PERFORMANCE AND UPGRADE NEEDS
-      </h3>
-      <Blocks />
+      <Testimonials />
     </Layout>
   )
 }

@@ -1,0 +1,39 @@
+.site-testimonials {
+  background-color: #77c0ed;
+  text-align: center;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
+.testimonial-header {
+  color: #ffffff;
+  padding-top: 2rem;
+}
+
+.break {
+  margin-bottom: 5px;
+  margin: auto;
+  margin-bottom: 2rem;
+  color: black;
+  border-color: black;
+}
+
+.testimonial-card {
+  padding: 1rem;
+  font-size: large;
+}
+
+.testimonial-image {
+  border-radius: 5rem;
+}
+
+.testimonial-card-description {
+  color: white;
+}
+
+.testimonial-card-customerName {
+  font-weight: bold;
+}
+
+.testimonial-stars {
+  color: yellow;
+}

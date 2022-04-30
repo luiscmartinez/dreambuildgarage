@@ -1,6 +1,10 @@
 import React from "react"
+import ReactMarkdown from "react-markdown"
 import { useStaticQuery, graphql } from "gatsby"
 import { getImage, GatsbyImage } from "gatsby-plugin-image"
+import { ServiceFooter } from "./servicesFooter"
+
+import "../css/services.css"
 
 export const Services = () => {
   const serviceData = useStaticQuery(graphql`
@@ -30,26 +34,34 @@ export const Services = () => {
     }
   `)
   return (
-    <div id="services">
-      <h2>Committed to Quality at Every Step</h2>
-      {serviceData.allStrapiService.edges.map(({ node }) => {
-        const { description, image, id, title } = node
+    <div id="services" className="site-services-section">
+      <h1>Our Services</h1>
+      <div className="break service-divider"></div>
+      <div className="service-section-cards">
+        {serviceData.allStrapiService.edges.map(({ node }) => {
+          const { description, image, id, title } = node
+          const imageSharp = image.localFile.childrenImageSharp.map(child => {
+            const gatsbyImage = getImage(child.gatsbyImageData)
+            return gatsbyImage
+          })
 
-        const imageSharp = image.localFile.childrenImageSharp.map(child => {
-          const gatsbyImage = getImage(child.gatsbyImageData)
-          return gatsbyImage
-        })
+          const descriptionMarkdown = description.data.description
 
-        const descriptionMarkdown = description.data.description
-
-        return (
-          <div key={id}>
-            <GatsbyImage image={imageSharp[0]} />
-            <h3>{title}</h3>
-            <p>{descriptionMarkdown}</p>
-          </div>
-        )
-      })}
+          return (
+            <div key={id} className="service-card">
+              <GatsbyImage
+                image={imageSharp[0]}
+                className="service-card-image"
+              />
+              <h3 className="service-card-title">{title}</h3>
+              <p className="service-card-description">
+                <ReactMarkdown>{descriptionMarkdown}</ReactMarkdown>
+              </p>
+            </div>
+          )
+        })}
+      </div>
+      <ServiceFooter />
     </div>
   )
 }
