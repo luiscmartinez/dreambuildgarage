@@ -2,7 +2,7 @@
   "name": "gatsby-starter-default",
   "private": true,
   "description": "A simple Gatsby starter that got taken over by the author",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "author": "millionGrad (luiscmartinez)",
   "dependencies": {
     "@react-icons/all-files": "^4.1.0",
