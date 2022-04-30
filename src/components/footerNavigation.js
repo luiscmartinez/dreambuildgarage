@@ -1,5 +1,5 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Link } from "react-scroll"
 
 const navigations = [
   { id: "about", title: "ABOUT US" },
