@@ -44,7 +44,7 @@ export const Testimonials = () => {
   }
 
   return (
-    <div className="site-testimonials">
+    <div className="site-testimonials" id="testimonials">
       <h2 className="testimonial-header"> CUSTOMER TESTIMONIALS</h2>
       <div className="break"></div>
       <AntCarousel autoplay>
