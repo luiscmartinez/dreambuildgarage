@@ -22,17 +22,6 @@ const IndexPage = () => {
       <AboutFooter />
       <Services />
       <Testimonials />
-      <PrimaryBtns />
-      <h3
-        style={{
-          textAlign: "center",
-          fontWeight: "500",
-          fontFamily: "monospace",
-        }}
-      >
-        5 STAR QUALITY FOR ALL YOUR PERFORMANCE AND UPGRADE NEEDS
-      </h3>
-      <Blocks />
     </Layout>
   )
 }
