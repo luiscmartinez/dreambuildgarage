@@ -1,5 +1,5 @@
 import React from "react"
-import { Link } from "react-scroll"
+import { AnchorLink } from "gatsby-plugin-anchor-links"
 import { GatsbyImage } from "gatsby-plugin-image"
 
 export default function NavigationDesktop({ navigations, image }) {
@@ -7,9 +7,9 @@ export default function NavigationDesktop({ navigations, image }) {
     return list.map(eli => {
       return (
         <li className="navigation-item desktop" key={eli.id}>
-          <Link to={eli.id} spy={true} smooth={true}>
+          <AnchorLink to={eli.id} spy={true} smooth={true}>
             {eli.title}
-          </Link>
+          </AnchorLink>
         </li>
       )
     })
@@ -19,9 +19,9 @@ export default function NavigationDesktop({ navigations, image }) {
       <nav className="inner-nav-desktop">
         <ul className="inner-nav-desktop-list">
           {renderListItems(navigations.slice(0, 2))}
-          <Link to="topbar" spy={true} smooth={true}>
+          <AnchorLink to="/" spy={true} smooth={true}>
             <GatsbyImage image={image} style={{ borderRadius: "30px" }} />
-          </Link>
+          </AnchorLink>
           {renderListItems(navigations.slice(2, 4))}
         </ul>
       </nav>

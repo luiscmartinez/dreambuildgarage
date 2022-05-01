@@ -6,13 +6,8 @@ import "../css/navigation.css"
 import "../css/header.css"
 import NavigationMobile from "./navigations/navigationMobile"
 import NavigationDesktop from "./navigations/navigationDesktop"
+import { navigations } from "../utils/navigations"
 
-const navigations = [
-  { id: "about", title: "ABOUT US" },
-  { id: "services", title: "OUR SERVICES" },
-  { id: "testimonials", title: "TESTIMONIALS" },
-  { id: "contact", title: "CONTACT" },
-]
 const Header = () => {
   const [isHamburgerOpen, setHamburger] = React.useState(false)
   const isLarge = useMedia({ minWidth: 960 })

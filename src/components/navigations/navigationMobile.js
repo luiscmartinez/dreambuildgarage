@@ -1,5 +1,5 @@
 import React from "react"
-import { Link } from "react-scroll"
+import { AnchorLink } from "gatsby-plugin-anchor-links"
 import { GatsbyImage } from "gatsby-plugin-image"
 import HamburgerMenu from "react-hamburger-menu"
 import useOnClickOutside from "use-onclickoutside"
@@ -23,8 +23,8 @@ export default function NavigationMobile({
     <header className="site-navigation" ref={siteNavigationRef}>
       <div className="headerContainer">
         <h1 className="headerTitle"></h1>
-        <Link
-          to="topbar"
+        <AnchorLink
+          to="/"
           spy={true}
           smooth={true}
           onClick={() => {
@@ -35,7 +35,7 @@ export default function NavigationMobile({
           }}
         >
           <GatsbyImage image={image} style={{ borderRadius: "30px" }} />
-        </Link>
+        </AnchorLink>
         <div className="hamburgerMenu">
           <HamburgerMenu
             isOpen={isHamburgerOpen}
@@ -60,15 +60,19 @@ export default function NavigationMobile({
         <ul className="inner-nav-mobile-list">
           {navigations.map(eli => {
             return (
-              <li className="navigation-item" key={eli.id}>
-                <Link
-                  to={eli.id}
-                  spy={true}
-                  smooth={true}
-                  onClick={() => setHamburger(prev => !prev)}
-                >
+              <li
+                className="navigation-item"
+                key={eli.id}
+                onClick={() => {
+                  if (isHamburgerOpen) {
+                    // close the navigation dropdown
+                    setHamburger(false)
+                  }
+                }}
+              >
+                <AnchorLink to={eli.id} spy={true} smooth={true}>
                   {eli.title}
-                </Link>
+                </AnchorLink>
               </li>
             )
           })}
