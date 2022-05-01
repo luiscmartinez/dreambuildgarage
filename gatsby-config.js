@@ -66,6 +66,12 @@ module.exports = {
       resolve: `gatsby-source-strapi`,
       options: strapiConfig,
     },
+    {
+      resolve: "gatsby-plugin-anchor-links",
+      options: {
+        offset: -120,
+      },
+    },
 
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
