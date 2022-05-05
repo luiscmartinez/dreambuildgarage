@@ -1,9 +1,16 @@
 import React from "react"
-import { Link } from "gatsby"
+import { useStaticQuery, graphql, Link } from "gatsby"
 import "../css/footer.css"
 
 export const Footer = () => {
-  const phone = "(323) 633 7050"
+  const { strapiContact } = useStaticQuery(graphql`
+    query StrapiContactInfo {
+      strapiContact {
+        phone
+      }
+    }
+  `)
+  const { phone } = strapiContact
   return (
     <div className="site-footer">
       <div className="footer-message">
