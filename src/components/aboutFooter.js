@@ -1,8 +1,18 @@
 import React from "react"
-import { render } from "react-dom"
+import { graphql, useStaticQuery } from "gatsby"
 import "../css/aboutFooter.css"
 
 export const AboutFooter = () => {
+  const { strapiContact } = useStaticQuery(graphql`
+    query FooterData {
+      strapiContact {
+        id
+        address
+        phone
+      }
+    }
+  `)
+  const { address, phone } = strapiContact
   const renderData = data => {
     const { top, bottom } = data
     return (
@@ -16,8 +26,8 @@ export const AboutFooter = () => {
   return (
     <div className="site-about-footer">
       <div className="about-footer-inner">
-        {renderData({ top: "GIVE US A CALL", bottom: "3236330502" })}
-        {renderData({ top: "COME ON BY", bottom: "5311 New York Ave " })}
+        {renderData({ top: "GIVE US A CALL", bottom: phone })}
+        {renderData({ top: "COME ON BY", bottom: address })}
       </div>
     </div>
   )
