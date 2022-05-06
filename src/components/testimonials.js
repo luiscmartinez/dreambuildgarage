@@ -55,7 +55,7 @@ export const Testimonials = () => {
           )
           return (
             <div className="testimonial-card">
-              <GatsbyImage image={image} className="testimonial-image" />
+              <GatsbyImage image={image} className="testimonial-avatar" />
               <div className="testimonial-card-description">{description}</div>
               <div className="testimonial-card-customerName">
                 {customerName}

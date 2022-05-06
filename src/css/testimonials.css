@@ -22,8 +22,10 @@
   font-size: large;
 }
 
-.testimonial-image {
-  border-radius: 5rem;
+.testimonial-avatar {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
 }
 
 .testimonial-card-description {
