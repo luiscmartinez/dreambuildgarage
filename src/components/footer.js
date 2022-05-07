@@ -19,9 +19,9 @@ export const Footer = () => {
           <a href={`tel:${phone.replace(/\D/g, "")}`}>{phone}</a>
         </span>
       </div>
-      <button className="services-footer-btn footer-btn">
-        <Link to="contact">CONTACT US</Link>
-      </button>
+      <Link to="contact" className="services-footer-btn footer-btn">
+        CONTACT US
+      </Link>
     </div>
   )
 }

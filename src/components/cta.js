@@ -67,11 +67,9 @@ export const Cta = () => {
               {handleTextColor(description)}
             </span>
           </h1>
-          <div className="cta-button">
-            <Link to="about" smooth={true}>
-              {buttonTitle}
-            </Link>
-          </div>
+          <Link to="about" smooth={true} className="cta-button">
+            {buttonTitle}
+          </Link>
         </div>
       </div>
     </BackgroundImage>

@@ -16,9 +16,9 @@ export const ServiceFooter = () => {
     <div className="services-footer">
       <h2>Let us help you with a service estimate!</h2>
       <div className="services-footer-inner">
-        <button className="services-footer-btn">
-          <Link to="contact">CONTACT US</Link>
-        </button>
+        <Link to="contact" className="services-footer-btn">
+          CONTACT US
+        </Link>
         <div className="service-footer-message">
           or call
           <div className="service-footer-number">

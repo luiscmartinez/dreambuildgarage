@@ -30,6 +30,11 @@
   font-size: large;
   background-color: #1b88ca;
   font-weight: bold;
+  color: white;
+  text-align: center;
+}
+.services-footer-btn:hover {
+  color: white;
 }
 
 .services-footer-btn a {
