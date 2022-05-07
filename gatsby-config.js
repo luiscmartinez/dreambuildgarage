@@ -1,5 +1,5 @@
 require("dotenv").config()
-
+const siteUrl = `https://dreambuildgarage.com`
 const strapiConfig = {
   apiURL: process.env.STRAPI_API_URL,
   accessToken: process.env.STRAPI_TOKEN,
@@ -18,7 +18,33 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
-    `gatsby-plugin-sitemap`,
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        output: `/sitemap.xml`,
+        query: `
+        {
+          site {
+            siteMetadata {
+              siteUrl
+            }
+          }
+          allSitePage {
+              nodes {
+                path
+              } 
+          }
+        }
+        `,
+
+        serialize: testing => {
+          return {
+            url: siteUrl + testing.path,
+            lastmod: "2022-01-03T09:36:33+00:00",
+          }
+        },
+      },
+    },
     {
       resolve: `gatsby-transformer-sharp`,
       options: {
