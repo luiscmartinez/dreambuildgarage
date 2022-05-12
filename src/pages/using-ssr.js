@@ -5,6 +5,7 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 
 const UsingSSR = ({ serverData }) => {
+  console.log("AHHH I AM DETECTED")
   return (
     <Layout>
       <Seo title="Using SSR" />
@@ -30,6 +31,7 @@ const UsingSSR = ({ serverData }) => {
 export default UsingSSR
 
 export async function getServerData() {
+  console.log("YOU WONT SEE ME BROWSER !")
   try {
     const res = await fetch(`https://dog.ceo/api/breeds/image/random`)
     if (!res.ok) {

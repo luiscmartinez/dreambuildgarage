@@ -36,10 +36,16 @@ module.exports = {
           }
         }
         `,
-
-        serialize: testing => {
+        resolvePages: ({ allSitePage }) => {
+          const { nodes } = allSitePage
+          const ignoreServerSideRender = ({ path }) => {
+            return path !== "/using-ssr/"
+          }
+          return nodes.filter(ignoreServerSideRender)
+        },
+        serialize: ({ path }) => {
           return {
-            url: siteUrl + testing.path,
+            url: siteUrl + path,
             lastmod: "2022-01-03T09:36:33+00:00",
           }
         },
