@@ -4,7 +4,18 @@ const strapiConfig = {
   apiURL: process.env.STRAPI_API_URL,
   accessToken: process.env.STRAPI_TOKEN,
   collectionTypes: ["about", "service", "contact", "hero", "testimonial"],
-  // singleTypes: [],
+  singleTypes: [
+    {
+      singularName: "homepage",
+      queryParams: {
+        populate: {
+          contact: "*",
+          about: "*",
+          hero: "*",
+        },
+      },
+    },
+  ],
   // queryLimit: 1000,
 }
 module.exports = {
