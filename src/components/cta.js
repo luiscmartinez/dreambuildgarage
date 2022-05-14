@@ -1,5 +1,5 @@
 import React from "react"
-import { Link } from "react-scroll"
+import { AnchorLink } from "gatsby-plugin-anchor-links"
 import { graphql, useStaticQuery } from "gatsby"
 import { getImage } from "gatsby-plugin-image"
 
@@ -67,9 +67,9 @@ export const Cta = () => {
               {handleTextColor(description)}
             </span>
           </h1>
-          <Link to="about" smooth={true} className="cta-button">
+          <AnchorLink to="/#about" smooth={true} className="cta-button">
             {buttonTitle}
-          </Link>
+          </AnchorLink>
         </div>
       </div>
     </BackgroundImage>

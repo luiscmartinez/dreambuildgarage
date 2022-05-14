@@ -1,5 +1,5 @@
 import React from "react"
-import { Link } from "react-scroll"
+import { AnchorLink } from "gatsby-plugin-anchor-links"
 import { graphql, useStaticQuery } from "gatsby"
 import "../css/about.css"
 
@@ -27,9 +27,13 @@ export const About = () => {
         <div className="break"></div>
         <p>{about.description}</p>
         <div className="about-btn-wrapper">
-          <Link to="services" smooth={true} className="about-section-btn">
+          <AnchorLink
+            to="/#services"
+            smooth={true}
+            className="about-section-btn"
+          >
             Our Services
-          </Link>
+          </AnchorLink>
         </div>
       </div>
     </div>
