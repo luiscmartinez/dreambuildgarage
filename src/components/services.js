@@ -53,7 +53,7 @@ export const Services = () => {
                 image={imageSharp[0]}
                 className="service-card-image"
               />
-              <h3 className="service-card-title">{title}</h3>
+              <h2 className="service-card-title">{title}</h2>
               <p className="service-card-description">
                 <ReactMarkdown>{descriptionMarkdown}</ReactMarkdown>
               </p>
