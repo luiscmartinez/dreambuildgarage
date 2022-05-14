@@ -3,7 +3,7 @@ const siteUrl = `https://dreambuildgarage.com`
 const strapiConfig = {
   apiURL: process.env.STRAPI_API_URL,
   accessToken: process.env.STRAPI_TOKEN,
-  collectionTypes: ["about", "service", "contact", "hero", "testimonial"],
+  collectionTypes: ["service", "testimonial"],
   singleTypes: [
     {
       singularName: "homepage",

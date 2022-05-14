@@ -3,16 +3,17 @@ import { graphql, useStaticQuery } from "gatsby"
 import "../css/aboutFooter.css"
 
 export const AboutFooter = () => {
-  const { strapiContact } = useStaticQuery(graphql`
+  const { strapiHomepage } = useStaticQuery(graphql`
     query FooterData {
-      strapiContact {
-        id
-        address
-        phone
+      strapiHomepage {
+        contact {
+          email
+          phone
+        }
       }
     }
   `)
-  const { address, phone } = strapiContact
+  const { address, phone } = strapiHomepage.contact
   const renderData = data => {
     const { top, bottom } = data
     return (

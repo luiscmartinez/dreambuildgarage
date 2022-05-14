@@ -4,14 +4,16 @@ import { Link, useStaticQuery, graphql } from "gatsby"
 import "../css/servicesFooter.css"
 
 export const ServiceFooter = () => {
-  const { strapiContact } = useStaticQuery(graphql`
+  const { strapiHomepage } = useStaticQuery(graphql`
     query StrapiContactPhone {
-      strapiContact {
-        phone
+      strapiHomepage {
+        contact {
+          phone
+        }
       }
     }
   `)
-  const { phone } = strapiContact
+  const { phone } = strapiHomepage.contact
   return (
     <div className="services-footer">
       <h2>Let us help you with a service estimate!</h2>

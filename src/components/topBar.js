@@ -6,20 +6,18 @@ import { BiMap } from "@react-icons/all-files/bi/BiMap"
 import "../css/topbar.css"
 
 export const TopBar = () => {
-  const contactData = useStaticQuery(graphql`
+  const { strapiHomepage } = useStaticQuery(graphql`
     query ContactQuery {
-      allStrapiContact {
-        nodes {
-          phone
+      strapiHomepage {
+        contact {
           email
-          address
+          phone
         }
       }
     }
   `)
-
-  const contactInfo = contactData.allStrapiContact.nodes[0]
-  const { address, phone, email } = contactInfo
+  const { contact } = strapiHomepage
+  const { phone, email } = contact
   return (
     <div className="topbar" id="topbar">
       <a href={`tel:${phone.replace(/\D/g, "")}`} className="topbar-item">

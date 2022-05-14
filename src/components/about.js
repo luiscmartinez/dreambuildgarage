@@ -4,22 +4,18 @@ import { graphql, useStaticQuery } from "gatsby"
 import "../css/about.css"
 
 export const About = () => {
-  const aboutData = useStaticQuery(graphql`
+  const { strapiHomepage } = useStaticQuery(graphql`
     query MyQuery {
-      allStrapiAbout {
-        edges {
-          node {
-            id
-            title
-            description
-          }
+      strapiHomepage {
+        about {
+          description
+          title
         }
       }
     }
   `)
 
-  const about = aboutData.allStrapiAbout.edges[0].node
-
+  const { about } = strapiHomepage
   return (
     <div id="about" className="site-about-section">
       <div className="about-inner-wrapper">
