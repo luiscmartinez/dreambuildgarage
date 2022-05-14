@@ -9,31 +9,33 @@ import { useMedia } from "use-media"
 import "../css/cta.css"
 
 export const Cta = () => {
-  const { placeholderImage } = useStaticQuery(
+  const { allStrapiHomepage } = useStaticQuery(
     graphql`
-      query {
-        placeholderImage: allStrapiHero {
+      {
+        allStrapiHomepage {
           nodes {
-            backgroundImg {
-              localFile {
-                childImageSharp {
-                  gatsbyImageData
+            hero {
+              description
+              title
+              buttonTitle
+              media {
+                localFile {
+                  childImageSharp {
+                    gatsbyImageData(placeholder: TRACED_SVG)
+                  }
                 }
               }
             }
-            title
-            description
-            buttonTitle
           }
         }
       }
     `
   )
 
-  const { backgroundImg, description, title, buttonTitle } =
-    placeholderImage.nodes[0]
+  const { media, description, title, buttonTitle } =
+    allStrapiHomepage.nodes[0].hero
 
-  const image = getImage(backgroundImg.localFile.childImageSharp)
+  const image = getImage(media.localFile.childImageSharp)
   // Use like this:
   const bgImage = convertToBgImage(image)
 
