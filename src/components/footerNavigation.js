@@ -5,7 +5,7 @@ import { navigations } from "../utils/navigations"
 export const FooterNavigation = () => {
   return (
     <footer className="site-footer footer-navigation">
-      <AnchorLink to="/">
+      <AnchorLink to="/" className="copyright">
         {" "}
         © {new Date().getFullYear()},{` `}Dream Build Auto Service
       </AnchorLink>
