@@ -14,7 +14,7 @@ const Header = () => {
 
   const imageData = useStaticQuery(graphql`
     query LandingCarouselQuerys {
-      allFile(filter: { name: { eq: "dbg_logo-384x384" } }) {
+      allFile(filter: { name: { eq: "dbg_logo_HD" } }) {
         edges {
           node {
             id
