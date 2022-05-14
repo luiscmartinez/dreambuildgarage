@@ -11,7 +11,9 @@ const strapiConfig = {
         populate: {
           contact: "*",
           about: "*",
-          hero: "*",
+          hero: {
+            populate: "*",
+          },
         },
       },
     },
