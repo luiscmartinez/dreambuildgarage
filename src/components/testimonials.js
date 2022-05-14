@@ -47,7 +47,7 @@ export const Testimonials = () => {
     <div className="site-testimonials" id="testimonials">
       <h2 className="testimonial-header"> CUSTOMER TESTIMONIALS</h2>
       <div className="break"></div>
-      <AntCarousel autoplay>
+      <AntCarousel autoplay dots={false}>
         {allStrapiTestimonial.edges.map(({ node }) => {
           const { customerName, description, stars, customerImage } = node
           const image = getImage(
